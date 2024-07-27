@@ -1,4 +1,3 @@
-
 import NAVBAR from '../Navbar/Navbar.jsx';
 import React, { useState } from 'react';
 import "./SimulationPage.css";
@@ -26,92 +25,97 @@ const SimulationPage = () => {
     e.preventDefault();
     setSubmittedData(formData);
     // Optionally, you could also clear the form fields
-    // setFormData({ name: '', email: '' });
+    // setFormData({ name: '', email: '', subject: '', message: '', malicious_link: '', recipient_email: '' });
   };
 
   return (
     <div>
-      <NAVBAR/>
-      <div className='txt'><h1>Phishing</h1></div>
+      <NAVBAR />
+      <div className='txt'><h1>Phishing Simulation</h1></div>
       <div className='middle'>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name"> Sender Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Sender Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="name"> Subject:</label>
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="name"> Message:</label>
-          <input
-            type="text"
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="name"> Malicious Link:</label>
-          <input
-            type="text"
-            id="malicious_link"
-            name="malicious_link"
-            value={formData.malicious_link}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="name"> Recipient Email:</label>
-          <input
-            type="text"
-            id="recipient_email"
-            name="recipient_email"
-            value={formData.recipient_email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit">Generate</button>
-      </form>
-      {submittedData && (
-        <div>
-          <h2>Generated Data:</h2>
-          <p><strong>Name:</strong> {submittedData.name}</p>
-          <p><strong>Email:</strong> {submittedData.email}</p>
-          <p><strong>Subject:</strong> {submittedData.subject}</p>
-        </div>
-      )}
-    </div>
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="name">Sender Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="email">Sender Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="subject">Subject:</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="message">Message:</label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
+          </div>
+          <div>
+            <label htmlFor="malicious_link">Malicious Link:</label>
+            <input
+              type="text"
+              id="malicious_link"
+              name="malicious_link"
+              value={formData.malicious_link}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="recipient_email">Recipient Email:</label>
+            <input
+              type="email"
+              id="recipient_email"
+              name="recipient_email"
+              value={formData.recipient_email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <button type="submit">Generate</button>
+        </form>
+        {submittedData && (
+          <div className="email-preview">
+            <h2>Email Preview:</h2>
+            <div className="email-header">
+              <p><strong>From:</strong> {submittedData.name} ({submittedData.email})</p>
+              <p><strong>To:</strong> {submittedData.recipient_email}</p>
+              <p><strong>Subject:</strong> {submittedData.subject}</p>
+            </div>
+            <div className="email-body">
+              <p>{submittedData.message}</p>
+              <a href={submittedData.malicious_link} target="_blank" rel="noopener noreferrer">Click here</a>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
