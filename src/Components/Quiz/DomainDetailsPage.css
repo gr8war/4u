@@ -1,0 +1,23 @@
+/* DomainDetailsPage.css */
+.domain-details-container {
+    padding: 20px;
+}
+
+.log-history {
+    margin-top: 20px;
+}
+
+.log-history table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.log-history th, .log-history td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.log-history th {
+    background-color: #2962ff;
+}

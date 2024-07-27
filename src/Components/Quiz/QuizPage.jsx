@@ -1,5 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';  // Import axios for HTTP requests
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+import axios from 'axios';
 import { BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill } from 'react-icons/bs';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import './Quiz.css';
@@ -7,24 +9,28 @@ import NAVBAR from '../Navbar/Navbar.jsx';
 
 function QuizPage() {
     const [data, setData] = useState([]);
+    const navigate = useNavigate(); // Initialize useNavigate
 
     useEffect(() => {
-        // Define the async function to fetch data
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://api.example.com/data'); // Replace with your API endpoint
-                setData(response.data);  // Set the fetched data into state
+                const response = await axios.get('https://api.example.com/data');
+                setData(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
 
-        fetchData(); // Call the fetch function
-    }, []); // Empty dependency array means this effect runs once on component mount
+        fetchData();
+    }, []);
+
+    const handleDomainClick = (domainName) => {
+        navigate(`/domain/${domainName}`); // Navigate to the domain details page
+    };
 
     return (
-      <>
-      <NAVBAR/>
+        <>
+        <NAVBAR/>
         <main className='main-container'>
             <div className='main-title'>
                 <h3>Dashboard</h3>
@@ -63,9 +69,21 @@ function QuizPage() {
                     </BarChart>
                 </ResponsiveContainer>
             </div>
+
+            <div className='domain-list'>
+                {data.map((domain) => (
+                    <div
+                        key={domain.name}
+                        className='domain-item'
+                        onClick={() => handleDomainClick(domain.name)}
+                    >
+                        {domain.name}
+                    </div>
+                ))}
+            </div>
         </main>
-        </>);
-    
+        </>
+    );
 }
 
 export default QuizPage;
