@@ -44,9 +44,22 @@ function About() {
     </div>
   </div>
 </div>
-    <div>Join</div>
+<div class="title-section-2">
+    <h2>Meet the Team at SecureFishing.com</h2>
+  </div>
+    <div class="container">
+ 
+  <div class="image-div">
+  <img src="https://s3-alpha-sig.figma.com/img/fda3/93f6/74ea5d3fce7b6abf02048f834f2fe078?Expires=1722816000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=icXsHMxKCwkdbDwnzK-Vgk84flkoRPd1tAFh1BF7YcpccLzbuddYagLCSAJy~fizfZhNwxXlOXtuyyZ22mORU1ejiHtSk8DrVX1amV58adfC-qp0W~fhhpHGxG8T5cbajkWkpkCD3CNSOOd3MH5KpoHm2J7V9e-xoW9BDwjQ0Yg5NmnYWMCtgckPTmVnA3SRE9A1JVvdhQITsJfEFocs0R5~AzSxTZk45ashINZ1f-RvUTck~DFBGvMSpKiTIIv5rqPv6GrCIDSYDX2m9jN3jfa3lve64xNmQqZxK8FOvm4D-gqQO0ZoC8aXSoPOAnxdcIZVUS~yZEWkuvSXE0vQLg__" alt="Descriptive">
+  </img>
+  </div>
+  <div class="text-div">
+  Become part of a community dedicated to online safety. Share your experiences, learn from others, and stay connected with the latest cybersecurity trends and tips.
+  </div>
+</div>
     </div>
   );
+  
 }
 
 export default About;

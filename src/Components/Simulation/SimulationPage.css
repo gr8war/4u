@@ -1,0 +1,31 @@
+form{
+    padding: 20px;
+    font-family: 'Krona One', sans-serif;
+    line-height: 2.5vw;
+}
+button{
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 4vw; /* Font size relative to viewport width */
+}
+.txt{
+    font-size: 2vw; /* Font size relative to viewport width */
+    line-height: 4vw;
+    font-family: 'Krona One', sans-serif;
+    text-align: center;
+    margin-top: 40px;
+}
+input{
+    background-color:#0D3DB4 ;
+    color: white;
+    height: 5vw;
+    font-size: 4vw;
+    padding: 1vw;
+}
+label{
+    font-size: 2vw;
+}
+.middle{
+    margin: auto;
+    padding: 1rem;
+}

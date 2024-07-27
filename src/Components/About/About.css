@@ -46,6 +46,13 @@
     
     
   }
+  .title-section-2 {
+    margin-bottom: 20px; /* Space below the title section */
+    text-align: center; /* Center-align the title */
+    color:#8299FE;
+    font-size: 2.6vw;
+    
+  }
   
   /* Styles for the title */
   .title-section h2 {
@@ -76,8 +83,8 @@
   
   /* Styles for the round image */
   .row-item img {
-    width: 100px; /* Adjust size as needed */
-    height: 100px; /* Adjust size as needed */
+    width: 15vw; /* Adjust size as needed */
+    height: 15vw; /* Adjust size as needed */
     border-radius: 50%; /* Make the image round */
     object-fit: cover; /* Ensure the image covers the area */
     margin-bottom: 10px; /* Space below the image */
@@ -96,3 +103,84 @@
     font-size: 1.7vw;
     margin: 0; /* Remove default margin */
   }
+
+  /* Styles for the main container */
+.main-wrapper {
+  margin: 20px; /* Margin around the main container */
+}
+
+/* Styles for the title section */
+.title-area {
+  margin-bottom: 20px; /* Space below the title section */
+  text-align: center; /* Center-align the title */
+}
+
+/* Styles for the title */
+.title-area h2 {
+  font-size: 24px; /* Adjust font size as needed */
+  margin: 0; /* Remove default margin */
+}
+
+/* Styles for the feature grid container */
+.feature-grid {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Distribute space evenly between the items */
+  gap: 20px; /* Space between each child item */
+}
+
+/* Styles for each feature card */
+.feature-card {
+  background-color: #e0e0e0; /* Background color for visibility */
+  border: 1px solid #ccc; /* Border for visibility */
+  padding: 20px; /* Padding inside each item */
+  border-radius: 8px; /* Optional rounded corners */
+  flex: 1; /* Allow it to grow and shrink equally */
+  text-align: center; /* Center-align text inside each item */
+  display: flex; /* Use flexbox for inner alignment */
+  flex-direction: column; /* Arrange children vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+/* Styles for the round image in feature card */
+.feature-card img {
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+  border-radius: 50%; /* Make the image round */
+  object-fit: cover; /* Ensure the image covers the area */
+  margin-bottom: 10px; /* Space below the image */
+}
+
+/* Styles for the title inside each feature card */
+.feature-card h3 {
+  font-size: 18px; /* Adjust font size as needed */
+  margin: 10px 0; /* Space around the title */
+}
+
+/* Styles for the text inside each feature card */
+.feature-card p {
+  font-size: 14px; /* Adjust font size as needed */
+  margin: 0; /* Remove default margin */
+}
+
+/* Styles for the highlight container */
+.highlight-container {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Vertically center the items */
+  margin-top: 20px; /* Space above the container */
+  padding: 20px; /* Padding inside the container */
+  background-color: #f9f9f9; /* Background color for visibility */
+  border-radius: 8px; /* Optional rounded corners */
+}
+
+/* Styles for the image in the highlight container */
+.highlight-container img {
+  width: 150px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional rounded corners */
+  margin-right: 20px; /* Space between the image and text */
+}
+
+/* Styles for the text content in the highlight container */
+.highlight-content {
+  flex: 1; /* Allow the text to grow and shrink */
+}
